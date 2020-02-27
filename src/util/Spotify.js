@@ -1,5 +1,5 @@
-const clientId = 'af3e06c8d2504f25b76b7ba81d83da7e';
-const redirectUri = 'http://localhost:3000/'
+const clientId = '7783e01e553a46149197799eb021fa1b';
+const redirectUri = 'http://localhost:3003/'
 let accessToken;
 
 const Spotify= {
@@ -8,7 +8,7 @@ const Spotify= {
           return  accessToken;
       }
       //check the access token
-      const accessTokenMatch = window.location.href.match(/acess_token=([^&]*)/);
+      const accessTokenMatch = window.location.href.match(/access_token=([^&]*)/);
       const expiresInMatch = window.location.href.match(/expires_in=([^&]*)/);
 
       if  (accessTokenMatch && expiresInMatch){
