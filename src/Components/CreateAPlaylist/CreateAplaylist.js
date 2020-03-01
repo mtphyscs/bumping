@@ -4,6 +4,9 @@ import SearchBar from '../SearchBar/SearchBar';
 import SearchResults from '../SearchResults/SearchResults';
 import Playlist from '../Playlist/Playlist';
 import Spotify from '../../util/Spotify';
+import {FacebookShareButton, TwitterShareButton} from "react-share";
+import { TwitterIcon, FacebookIcon } from "react-share";
+
 
 class CreateAPlaylist extends React.Component {
     constructor(props){
@@ -47,7 +50,7 @@ class CreateAPlaylist extends React.Component {
      
      
      savePlaylist(){
-       alert("works")
+       alert("saved")
        const trackUris = this.state.playlistTracks.map(track => track.uri);
       Spotify.savePlaylist(this.state.playlistName, trackUris).then(()=> {
         this.setState({
@@ -80,6 +83,28 @@ class CreateAPlaylist extends React.Component {
            onRemove= {this.removeTrack} onNameChange={this.updatePlaylistName} onSave={this.savePlaylist}
            />
        </div>
+       <div>
+        <footer>
+          <br></br>
+          <div >
+            <FacebookShareButton
+              children=""
+              url="https://elastic-hopper-147ec7.netlify.com/"
+              round="true"
+            >
+              <FacebookIcon round="true"></FacebookIcon>
+            </FacebookShareButton>
+            <TwitterShareButton
+              children=""
+              url="https://elastic-hopper-147ec7.netlify.com/"
+              round="true"
+            >
+              <TwitterIcon round="true"></TwitterIcon>
+            </TwitterShareButton>
+            <br></br>
+          </div>
+        </footer>
+      </div>
      </div>
     </div>
          </div>

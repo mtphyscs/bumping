@@ -1,15 +1,29 @@
-.Bumping {
-    height: 100%;
-    padding: 0 17% 10% 17%;
-    background-size: cover;
-    background-position: center;
-    background-color: rgb(0, 0, 0);
+
+.About{
+    padding: 15% 11% 80% 12%;
+    background-color:#8401ac;
+    background-image: url("pawel-czerwinski-JEV7CrJTUNE-unsplash.jpg");
     background-repeat: no-repeat;
     font-family: 'Work Sans', sans-serif;
-    font-weight: 500;
+    text-align: center;
     color: #fff;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+}
+
+.AboutContent {
+    font-size: xx-large;
+    text-align: center;
+   padding-bottom: 4%;
+    width: 90%;
+    height: 10%;
+    background-color:#8401ac;
+    box-shadow: 4px 4px 2px 2px rgb(0, 0, 0);
+    opacity: 0.8;
+    margin: auto;
+}
+
+
+@media only screen and (max-width: 1020px) {
+    .AboutContent {
+      width: 60%;
+    }
   }
-  

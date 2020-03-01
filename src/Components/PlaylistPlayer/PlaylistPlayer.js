@@ -8,6 +8,7 @@ class PlaylistPlayer extends Component {
             <div className="PlaylistPlayer">
                 <Play/>
             </div>
+            
         );
     }
 }
