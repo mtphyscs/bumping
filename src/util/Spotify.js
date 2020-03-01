@@ -1,5 +1,5 @@
 const clientId = '7783e01e553a46149197799eb021fa1b';
-const redirectUri = 'http://localhost:3003/'
+const redirectUri = 'http://localhost:3000/create-a-playlist';
 let accessToken;
 
 const Spotify= {

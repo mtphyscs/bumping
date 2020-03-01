@@ -15,14 +15,14 @@ class Footer extends React.Component {
           <div className="content has-text-centered">
             <FacebookShareButton
               children=""
-              url=" https://github.com"
+              url="https://elastic-hopper-147ec7.netlify.com/"
               round="true"
             >
               <FacebookIcon round="true"></FacebookIcon>
             </FacebookShareButton>
             <TwitterShareButton
               children=""
-              url=" https://github.com"
+              url="https://elastic-hopper-147ec7.netlify.com/"
               round="true"
             >
               <TwitterIcon round="true"></TwitterIcon>

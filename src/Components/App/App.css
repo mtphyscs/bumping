@@ -30,10 +30,10 @@ h2 {
 
 .App {
   height: 100%;
-  padding: 0 17% 10% 17%;
+  padding: 0 0% 0% 0%;
   background-size: cover;
   background-position: center;
-  background-color: rgb(189, 184, 184);
+  background-color: rgb(0, 0, 0);
   background-image: url("pawel-czerwinski-JEV7CrJTUNE-unsplash.jpg");
   background-repeat: no-repeat;
   font-family: 'Work Sans', sans-serif;
@@ -52,4 +52,4 @@ h2 {
     align-items: center;
     flex-direction: column;
   }
-}
+} 

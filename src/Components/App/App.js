@@ -1,93 +1,40 @@
 import React from 'react';
 import './App.css';
  
+import {Switch, Route } from 'react-router-dom'
 import SearchBar from '../SearchBar/SearchBar';
 import SearchResults from '../SearchResults/SearchResults';
 import Playlist from '../Playlist/Playlist';
 import Spotify from '../../util/Spotify';
-// import NavBar from '../NavBar/NavBar';
+import Play from '../Play/Play'
 import Footer from '../Footer/Footer';
- 
+import NavBar from '../NavBar/Navbar';
+import Bumping from '../Bumping/Bumping';
+import About from '../About/About';
+import CreateAPlaylist from '../CreateAPlaylist/CreateAplaylist';
+import PlaylistPlayer from '../PlaylistPlayer/PlaylistPlayer';
  
 class App extends React.Component {
-constructor(props){
-  super(props);
- 
-  this.state = {
-    searchResults: [],
-    playlistName: 'My Playlist',
-    playlistTracks: []
- 
-  }
-this.addTrack = this.addTrack.bind(this);
-this.removeTrack = this.removeTrack.bind(this);
-this.updatePlaylistName = this.updatePlaylistName.bind(this);
-this.savePlaylist = this.savePlaylist.bind(this);
-this.search = this.search.bind(this);
- }
- 
- 
- 
- addTrack(track){
-   let tracks = this.state.playlistTracks;
-   if (tracks.find(savedTrack => savedTrack.id === track.id)) {
-     return;
-   }
-    tracks.push(track);
-    this.setState({ playlistTracks : tracks });
- }
- 
- 
- removeTrack(track){
-   let tracks = this.state.playlistTracks;
-   tracks = tracks.filter(currentTrack => currentTrack.id !== track.id);
-   this.setState({ playlistTracks : tracks });
- 
- }
- 
- updatePlaylistName(name){
-   this.setState({ playlistName : name });
- }
- 
- 
- savePlaylist(){
-   alert("works")
-   const trackUris = this.state.playlistTracks.map(track => track.uri);
-  Spotify.savePlaylist(this.state.playlistName, trackUris).then(()=> {
-    this.setState({
-      playlistName:'New Playlist',
-      playlistTracks:[]
-    })
-  })
- }
- 
- 
- search(term){  
-   Spotify.search(term).then(searchResults => {
-     this.setState({
-       searchResults: searchResults
-     })
-   })
- }
- 
- 
  render() {
    return (
      <div>
        <div>
-       {/* <NavBar/> */}
- <h1>Bumping</h1> 
+       
  <div className="App">
-  <SearchBar onSearch={this.search}/>
-   <div className="App-playlist">
-     <SearchResults searchResults={this.state.searchResults} onAdd={this.addTrack}/>
-     <Playlist playlistName={this.state.playlistName} playlistTracks={this.state.playlistTracks}
-       onRemove= {this.removeTrack} onNameChange={this.updatePlaylistName} onSave={this.savePlaylist}
-       />
-   </div>
+   <NavBar />
+   <Switch>
+          <Route exact path='/home' component={Bumping}/>
+          <Route exact path='/about' component={About}/> 
+          <Route exact path='/create-a-playlist' component={CreateAPlaylist}/> 
+          <Route exact path='/playlist-player' component={PlaylistPlayer}/>
+        </Switch>
+{/*       
+  <SearchBar onSearch={this.search}/> */}
+{/*  
+   <Play/>
+   <Footer/> */}
  </div>
 </div>
-<Footer/>
      </div>
    );
  }
