@@ -4,9 +4,13 @@ import './index.css';
 import App from './Components/App/App';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router } from 'react-router-dom';
+import Authenticate from './Authenticate';
+
+
+const token = Authenticate();
 
 ReactDOM.render(
-       <Router> <App /></Router>
+       <Router> <App token={token} /></Router>
 , document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
