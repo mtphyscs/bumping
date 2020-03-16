@@ -4,21 +4,25 @@ import './NavBar.css';
 
 
 class Navbar extends Component {
-    render() {
-        return (
-        <div>
-  <nav className="nav-style">
-      <ul>
-        <li><Link to='/home'>Bumping</Link></li>
-        <li><Link to='/create-a-playlist'>Create A Playlist</Link></li>
-        <li><Link to='/playlist-player'>Playlist Player</Link></li>
-        {/* <li><Link to='/faq'>FAQ</Link></li>
-        <li><Link to='/contact'>Contact</Link></li> */}
-      </ul>
-    </nav>
-        </div>
-        );
-    }
+  render() {
+    return (
+      <div>
+        <nav className="nav-style">
+          <ul>
+            <li>
+              <Link to="/home">Bumping</Link>
+            </li>
+            <li>
+              <Link to="/create-a-playlist">Create A Playlist</Link>
+            </li>
+            <li>
+              <Link to="/playlist-player">Playlist Player</Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    );
+  }
 }
 
 
