@@ -1,36 +1,19 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import './NavBar.css';
+import React from './node_modules/react';
+import './NavBar.css'
 
 
-class Navbar extends Component {
-  render() {
-    return (
-      <div>
-        <nav className="nav-style">
-          <ul>
-            <li>
-              <Link to="/home">Bumping</Link>
-            </li>
-            <li>
-              <Link to="/create-a-playlist">Create A Playlist</Link>
-            </li>
-            <li>
-              <Link to="/playlist-player">Playlist Player</Link>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    );
-  }
+
+class Navbar extends React.Component {
+    render() {
+        return (
+            <div>
+                 <nav className="NavBar">
+      <span>Bumping</span>
+    </nav>
+            </div>
+        );
+    }
 }
 
 
-
-
 export default Navbar;
-
-
-
-
-
